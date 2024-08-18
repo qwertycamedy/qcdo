@@ -1,17 +1,16 @@
 import { FC } from "react";
 import { TodoAdd, TodoList } from "./components/shared";
-import { TodoContextProvider } from "./context/todo_context";
+import { store } from "@/store";
+import { Provider } from "react-redux";
 
 const App: FC = () => {
   return (
-    <TodoContextProvider>
+    <Provider store={store}>
       <div className="max-w-screen-md mx-auto pt-8 w-full min-h-full flex flex-col gap-5">
-        <TodoAdd
-        />
-        <TodoList
-        />
+        <TodoAdd />
+        <TodoList />
       </div>
-    </TodoContextProvider>
+    </Provider>
   );
 };
 

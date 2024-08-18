@@ -1,0 +1,19 @@
+{
+  "todo_items": [
+    {
+      "id": "gite",
+      "value": "Complete project",
+      "isCompleted": true
+    },
+    {
+      "id": "c253",
+      "value": "new task",
+      "isCompleted": false
+    },
+    {
+      "id": "f7fd",
+      "value": ";",
+      "isCompleted": false
+    }
+  ]
+}
