@@ -19,14 +19,14 @@ export const todoSlice = createSlice({
     clearValue: (state) => {
       state.value = "";
     },
-    setTodoItems: (state,action: PayloadAction<ITodo[]>) => {
+    setTodoItems: (state, action: PayloadAction<ITodo[]>) => {
       state.todoItems = action.payload;
     },
     //
-    addTodo: (state, action: PayloadAction<string>) => {
-      const value = action.payload;
-      if (value && value.trim() !== '') {
-        state.todoItems.unshift({ id: Date.now(), isCompleted: false, value });
+    addTodo: (state, action: PayloadAction<ITodo | undefined>) => {
+      const newTodo = action.payload;
+      if (newTodo) {
+        state.todoItems.push(newTodo);
       }
     },
     //
@@ -48,7 +48,13 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { setValue, clearValue, setTodoItems, addTodo, deleteTodo, toggleTodo } =
-  todoSlice.actions;
+export const {
+  setValue,
+  clearValue,
+  setTodoItems,
+  addTodo,
+  deleteTodo,
+  toggleTodo,
+} = todoSlice.actions;
 export const todoSel = (state: RootState) => state.todo;
 export default todoSlice.reducer;

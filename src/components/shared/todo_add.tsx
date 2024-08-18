@@ -18,8 +18,8 @@ export const TodoAdd: FC = () => {
   const onAdd = async () => {
     if (value && value.trim() !== "") {
       try {
-        await apiAddTodo(value);
-        dispatch(addTodo(value));
+        const {data: newTodo} = await apiAddTodo(value);
+        dispatch(addTodo(newTodo));
         dispatch(clearValue());
       } catch (err) {
         console.log(err);
