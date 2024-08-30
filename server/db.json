@@ -14,6 +14,11 @@
       "id": "11d1",
       "value": "Paris 2024",
       "isCompleted": false
+    },
+    {
+      "id": "1c09",
+      "value": "new todo",
+      "isCompleted": false
     }
   ]
 }
